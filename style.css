@@ -1,3 +1,25 @@
+#calculator{
+    width: 280px;
+    background-color: lightblue;
+    width: 280px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#display{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#display-box{
+    border: 2px solid darkblue;
+    height: 60px;
+    background-color: lightslategray;
+    border-radius: 10px;
+}
+
 #number-pad{
     display: flex;
     flex-direction: column;
@@ -13,13 +35,13 @@ button{
     border-radius: 50px;
     margin: 5px;
     border-style: none;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     background-color: gainsboro;
 }
 
 .operator{
-    background-color: lightblue;
+    background-color: lightskyblue;
 }
 
 .other{
