@@ -14,18 +14,19 @@ button{
     margin: 5px;
     border-style: none;
     font-size: 20px;
+    font-weight: bold;
     background-color: gainsboro;
 }
 
 .operator{
-    background-color: lightgreen;
+    background-color: lightblue;
 }
 
 .other{
-    background-color: lightgray;
+    background-color: grey;
 }
 
-#zero button{
+#zero{
     width: 130px;
 }
 
