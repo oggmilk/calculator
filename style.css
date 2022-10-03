@@ -3,6 +3,29 @@
     flex-direction: column;
 }
 
-.numbers{
+.buttons{
     display: flex;
 }
+
+button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    margin: 5px;
+    border-style: none;
+    font-size: 20px;
+    background-color: gainsboro;
+}
+
+.operator{
+    background-color: lightgreen;
+}
+
+.other{
+    background-color: lightgray;
+}
+
+#zero button{
+    width: 130px;
+}
+
