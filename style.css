@@ -1,3 +1,8 @@
+#display{
+    display: flex;
+    justify-content: center;
+}
+
 #calculator{
     width: 280px;
     background-color: lightblue;
@@ -14,8 +19,9 @@
 }
 
 #display-box{
-    border: 2px solid darkblue;
+    border: 1.5px solid darkblue;
     height: 60px;
+    width: 280px;
     background-color: lightslategray;
     border-radius: 10px;
 }
