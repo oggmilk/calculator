@@ -43,11 +43,20 @@ button{
     height: 60px;
     border-radius: 50px;
     margin: 5px;
-    border-style: none;
     font-size: 25px;
     font-weight: bold;
     background-color: gainsboro;
+    border-style: none;
 }
+
+button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  button:active {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: translateY(2px);
+  }
 
 .operator{
     background-color: lightskyblue;
