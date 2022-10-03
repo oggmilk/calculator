@@ -8,6 +8,12 @@
     margin: -40px;
 }
 
+#current-value{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #calculator{
     width: 280px;
     background-color: lightblue;
@@ -23,10 +29,14 @@
 
 #display-box{
     border: 1.5px solid darkblue;
-    height: 60px;
-    width: 280px;
+    width: 220px;
+    height: 0px;
     background-color: lightslategray;
     border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
 }
 
 #number-pad{
@@ -44,6 +54,7 @@ button{
     border-radius: 50px;
     margin: 5px;
     font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: gainsboro;
     border-style: none;
@@ -69,4 +80,3 @@ button:hover{
 #zero{
     width: 130px;
 }
-
