@@ -117,7 +117,7 @@ function evaluation(operator){
   if(previousVal.textContent == ""){
     previousVal.textContent = intermediateVal;
   }
-  currentVal.textContent = operate(parseFloat(previousVal.textContent), parseFloat(currentVal.textContent), operator).toFixed(8);
+  currentVal.textContent = Math.round(operate(parseFloat(previousVal.textContent), parseFloat(currentVal.textContent), operator) * 100) / 100;
   previousVal.textContent = "";
   
 }
