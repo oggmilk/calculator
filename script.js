@@ -117,7 +117,7 @@ function evaluation(operator){
   if(previousVal.textContent == ""){
     previousVal.textContent = intermediateVal;
   }
-  currentVal.textContent = operate(parseFloat(previousVal.textContent), parseFloat(currentVal.textContent), operator);
+  currentVal.textContent = operate(parseFloat(previousVal.textContent), parseFloat(currentVal.textContent), operator).toFixed(8);
   previousVal.textContent = "";
   
 }
