@@ -93,7 +93,7 @@ clear.addEventListener("click", () => {
   currentVal.textContent = "";
 })
 negative.addEventListener("click", () => {
-    currentVal.textContent = parseInt(currentVal.textContent) * -1;
+    currentVal.textContent = parseFloat(currentVal.textContent) * -1;
 })
 decimal.addEventListener("click", () => {
     if(currentVal.textContent.indexOf(".") < 1){
@@ -117,7 +117,7 @@ function evaluation(operator){
   if(previousVal.textContent == ""){
     previousVal.textContent = intermediateVal;
   }
-  currentVal.textContent = operate(parseInt(previousVal.textContent), parseInt(currentVal.textContent), operator);
+  currentVal.textContent = operate(parseFloat(previousVal.textContent), parseFloat(currentVal.textContent), operator);
   previousVal.textContent = "";
   
 }
