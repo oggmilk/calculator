@@ -15,6 +15,7 @@ const division = document.querySelector("#divide");
 const evaluate = document.querySelector("#equals");
 const clear = document.querySelector("#clear");
 const negative = document.querySelector("#negative");
+const decimal = document.querySelector("#decimal");
 
 zero.addEventListener("click", () => {
     currentVal.textContent += 0;
@@ -93,6 +94,12 @@ clear.addEventListener("click", () => {
 })
 negative.addEventListener("click", () => {
     currentVal.textContent = parseInt(currentVal.textContent) * -1;
+})
+decimal.addEventListener("click", () => {
+    if(currentVal.textContent.indexOf(".") < 1){
+        currentVal.textContent += ".";
+        previousVal.style.display = "none";
+    }
 })
 
 let currentVal = document.querySelector("#current-value");
