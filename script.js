@@ -43,6 +43,19 @@ nine.addEventListener("click", () => {
     currentVal.textContent += 9;
 });
 
+let currentVal = document.querySelector("#current-value");
+let previousVal = document.querySelector("#previous-value");
+let intermediateVal;
+
+function swap(){
+    intermediateVal = currentVal.textContent;
+    currentVal.textContent = "";
+    previousVal.textContent = intermediateVal;
+}
+
+
+
+
 function operate(num1, num2, operator){
     return operator(num1, num2);
 }
