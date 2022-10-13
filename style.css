@@ -8,7 +8,8 @@
     margin: -40px;
 }
 
-#current-value{
+#current-value,
+#previous-value{
     font-size: 40px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
