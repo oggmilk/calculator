@@ -14,6 +14,7 @@ const multiplication = document.querySelector("#multiply");
 const division = document.querySelector("#divide");
 const evaluate = document.querySelector("#equals");
 const clear = document.querySelector("#clear");
+const negative = document.querySelector("#negative");
 
 zero.addEventListener("click", () => {
     currentVal.textContent += 0;
@@ -89,6 +90,9 @@ evaluate.addEventListener("click", () => {
 clear.addEventListener("click", () => {
   previousVal.textContent = "";
   currentVal.textContent = "";
+})
+negative.addEventListener("click", () => {
+    currentVal.textContent = parseInt(currentVal.textContent) * -1;
 })
 
 let currentVal = document.querySelector("#current-value");
