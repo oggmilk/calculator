@@ -16,6 +16,7 @@ const evaluate = document.querySelector("#equals");
 const clear = document.querySelector("#clear");
 const negative = document.querySelector("#negative");
 const decimal = document.querySelector("#decimal");
+const percentage = document.querySelector("#percent");
 
 zero.addEventListener("click", () => {
     currentVal.textContent += 0;
@@ -101,6 +102,9 @@ decimal.addEventListener("click", () => {
         previousVal.style.display = "none";
     }
 })
+percentage.addEventListener("click", () => {
+    currentVal.textContent = parseFloat(currentVal.textContent) * 0.01;
+})
 
 let currentVal = document.querySelector("#current-value");
 let previousVal = document.querySelector("#previous-value");
@@ -117,9 +121,8 @@ function evaluation(operator){
   if(previousVal.textContent == ""){
     previousVal.textContent = intermediateVal;
   }
-  currentVal.textContent = Math.round(operate(parseFloat(previousVal.textContent), parseFloat(currentVal.textContent), operator) * 100) / 100;
-  previousVal.textContent = "";
-  
+  currentVal.textContent = Math.round(operate(parseFloat(previousVal.textContent), parseFloat(currentVal.textContent), operator) * 10000000) / 10000000;
+  previousVal.textContent = ""; 
 }
 
 function operate(num1, num2, operator) {
