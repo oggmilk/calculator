@@ -18,73 +18,98 @@ const negative = document.querySelector("#negative");
 const decimal = document.querySelector("#decimal");
 const percentage = document.querySelector("#percent");
 
+document.addEventListener("keydown", (event) => {
+  switch(event.key){
+    case "0":
+      updateDisplay(0);
+      break;
+    case "1":
+      updateDisplay(1);
+      break;
+    case "2":
+      updateDisplay(2);
+      break;
+    case "3":
+      updateDisplay(3);
+      break;
+    case "4":
+      updateDisplay(4);
+      break;
+    case "5":
+      updateDisplay(5);
+      break;
+    case "6":
+      updateDisplay(6);
+      break;
+    case "7":
+      updateDisplay(7);
+      break;
+    case "8":
+      updateDisplay(8);
+      break;
+    case "9":
+      updateDisplay(9);
+      break;
+    case "+":
+      quickEval(add);
+      break;
+    case "-":
+      quickEval(subtract);
+      break;
+    case "*":
+      quickEval(multiply);
+      break;
+    case "/":
+      quickEval(divide);
+      break;
+    case "Enter":
+      evaluation(operator);
+      break;
+    case ".":
+      addDecimal();
+  }
+})
 zero.addEventListener("click", () => {
-    currentVal.textContent += 0;
-    previousVal.style.display = "none";
+    updateDisplay(0);
 })
 one.addEventListener("click", () => {
-    currentVal.textContent += 1;
-    previousVal.style.display = "none";
+    updateDisplay(1);
 })
 two.addEventListener("click", () => {
-    currentVal.textContent += 2;
-    previousVal.style.display = "none";
+    updateDisplay(2);
 })
 three.addEventListener("click", () => {
-    currentVal.textContent += 3;
-    previousVal.style.display = "none";
+    updateDisplay(3);
 })
 four.addEventListener("click", () => {
-    currentVal.textContent += 4;
-    previousVal.style.display = "none";
+    updateDisplay(4);
 })
 five.addEventListener("click", () => {
-    currentVal.textContent += 5;
-    previousVal.style.display = "none";
+    updateDisplay(5);
 })
 six.addEventListener("click", () => {
-    currentVal.textContent += 6;
-    previousVal.style.display = "none";
+    updateDisplay(6);
 })
 seven.addEventListener("click", () => {
-    currentVal.textContent += 7;
-    previousVal.style.display = "none";
+    updateDisplay(7);
 })
 eight.addEventListener("click", () => {
-    currentVal.textContent += 8;
-    previousVal.style.display = "none";
+    updateDisplay(8);
 })
 nine.addEventListener("click", () => {
-    currentVal.textContent += 9;
-    previousVal.style.display = "none";
+    updateDisplay(9);
 })
 addition.addEventListener("click", () => {
-  if(previousVal.textContent != ""){
-    evaluation(operator);
-  }
-  swap();
-  operator = add;
+  quickEval(add)
 })
 subtraction.addEventListener("click", () => {
-  if(previousVal.textContent != ""){
-    evaluation(operator);
-  }
-  swap();
-  operator = subtract;
+  quickEval(subtract)
 })
 multiplication.addEventListener("click", () => {
-  if(previousVal.textContent != ""){
-    evaluation(operator);
-  }
-  swap();
-  operator = multiply;
+  quickEval(multiply)
 })
 division.addEventListener("click", () => {
-  if(previousVal.textContent != ""){
-    evaluation(operator);
-  }
-  swap();
-  operator = divide;
+  quickEval(divide)
 })
 evaluate.addEventListener("click", () => {
   evaluation(operator);
@@ -97,10 +122,7 @@ negative.addEventListener("click", () => {
     currentVal.textContent = parseFloat(currentVal.textContent) * -1;
 })
 decimal.addEventListener("click", () => {
-    if(currentVal.textContent.indexOf(".") < 1){
-        currentVal.textContent += ".";
-        previousVal.style.display = "none";
-    }
+    addDecimal();
 })
 percentage.addEventListener("click", () => {
     currentVal.textContent = parseFloat(currentVal.textContent) * 0.01;
@@ -115,6 +137,26 @@ function swap(){
   currentVal.textContent = "";
   previousVal.textContent = intermediateVal;
   previousVal.style.display = "block";
+}
+
+function updateDisplay(n){
+  currentVal.textContent += n;
+  previousVal.style.display = "none";
+}
+
+function quickEval(oper){
+  if(previousVal.textContent != ""){
+    evaluation(operator);
+  }
+  swap();
+  operator = oper;
+}
+
+function addDecimal(){
+  if(currentVal.textContent.indexOf(".") < 1){
+        currentVal.textContent += ".";
+        previousVal.style.display = "none";
+    }
 }
 
 function evaluation(operator){
