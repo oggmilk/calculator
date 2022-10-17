@@ -1,3 +1,4 @@
+//adds on-screen button link to HTML
 const zero = document.querySelector("#zero");
 const one = document.querySelector("#one");
 const two = document.querySelector("#two");
@@ -18,6 +19,7 @@ const negative = document.querySelector("#negative");
 const decimal = document.querySelector("#decimal");
 const percentage = document.querySelector("#percent");
 
+//number pad functionality
 document.addEventListener("keydown", (event) => {
   switch(event.key){
     case "0":
@@ -69,6 +71,8 @@ document.addEventListener("keydown", (event) => {
       addDecimal();
   }
 })
+
+//on-screen button click functionality
 zero.addEventListener("click", () => {
     updateDisplay(0);
 })
@@ -132,6 +136,7 @@ let currentVal = document.querySelector("#current-value");
 let previousVal = document.querySelector("#previous-value");
 let intermediateVal;
 
+//switches out previous variable for new variable
 function swap(){
   intermediateVal = currentVal.textContent;
   currentVal.textContent = "";
@@ -139,11 +144,13 @@ function swap(){
   previousVal.style.display = "block";
 }
 
+//updates current value when new numbers inputed
 function updateDisplay(n){
   currentVal.textContent += n;
   previousVal.style.display = "none";
 }
 
+//evaluates function if an operator is pressed before evaluation button
 function quickEval(oper){
   if(previousVal.textContent != ""){
     evaluation(operator);
@@ -159,6 +166,7 @@ function addDecimal(){
     }
 }
 
+//evaluates operation between previous value and currently entered value
 function evaluation(operator){
   if(previousVal.textContent == ""){
     previousVal.textContent = intermediateVal;
@@ -167,6 +175,7 @@ function evaluation(operator){
   previousVal.textContent = ""; 
 }
 
+//math functionality for evaluations
 function operate(num1, num2, operator) {
   return operator(num1, num2);
 }
