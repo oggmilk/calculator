@@ -7,3 +7,6 @@
     -need to fix creating a new number after hitting equals button
     -add error for diving by zero
     -surely other things as well
+
+    Live preview:
+    https://oggmilk.github.io/calculator/
